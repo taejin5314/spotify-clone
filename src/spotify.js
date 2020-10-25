@@ -1,2 +1,2 @@
 const CLIENT_ID = '7b2ae44017af4da0b8d0a9af7567a497';
-const CLIENT_SECRET = '375ca936aa3742bfaa892e0f72dfa5d3';
+const CLIENT_SECRET = 'ac7c8724647b4ca8b60fc047eb88d4db';
