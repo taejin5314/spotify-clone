@@ -1,0 +1,2 @@
+const CLIENT_ID = '7b2ae44017af4da0b8d0a9af7567a497';
+const CLIENT_SECRET = '375ca936aa3742bfaa892e0f72dfa5d3';
