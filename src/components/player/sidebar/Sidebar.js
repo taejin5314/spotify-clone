@@ -1,10 +1,11 @@
 import React from 'react';
-import './Sidebar.css'
+import './Sidebar.css';
+import logo from '../../../images/Spotify_Logo_RGB_White.png';
 
 function Sidebar() {
     return (
         <div className="sidebar">
-            <h1>I am the sidebar</h1>
+            <img className="sidebar__logo" src={logo} alt="Spotify Logo" />
         </div>
     )
 }

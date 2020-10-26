@@ -1,4 +1,10 @@
 .body {
     flex: 1;
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 1));
+    height: 100vh;
+    color: white;
+}
+
+.body__container {
+    padding: 30px;
 }
