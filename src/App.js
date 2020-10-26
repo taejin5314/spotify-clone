@@ -5,14 +5,14 @@ import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
 import Player from './components/player/Player';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUser, SET_USER } from './features/userSlice';
+import { selectUser, selectToken, SET_TOKEN, SET_USER } from './features/userSlice';
 
 const spotify = new SpotifyWebApi();
 
 function App() {
   const user = useSelector(selectUser);
+  const token = useSelector(selectToken);
   const dispatch = useDispatch();
-  const [token, setToken] = useState(null);
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -20,7 +20,9 @@ function App() {
     window.location.hash = "";
 
     if (_token) {
-      setToken(_token);
+      dispatch(SET_TOKEN({
+        token: _token
+      }))
 
       spotify.setAccessToken(_token);
 
@@ -31,14 +33,16 @@ function App() {
         }))
       })
     }
-    console.log('I HAVE A TOKEN>>> ', token);
   }, [window.location.hash])
+
+  console.log("USER: ", user);
+  console.log("TOKEN: ", token)
 
   return (
     <div className="app">
       {
         token ? (
-          <Player />
+          <Player spotify={spotify} />
         ) : (
             <Login />
           )

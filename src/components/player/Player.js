@@ -1,8 +1,9 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { selectUser } from '../../features/userSlice'
+import React from 'react';
+import './Player.css';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/userSlice';
 
-function Player() {
+function Player({ spotify }) {
     const user = useSelector(selectUser);
     return (
         <div className="player">
@@ -11,4 +12,4 @@ function Player() {
     )
 }
 
-export default Player
+export default Player;
