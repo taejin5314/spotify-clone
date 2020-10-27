@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.sidebarOption > p {
+    font-size: 12px;
+    font-weight: 700;
+}
 .sidebarOption__icon {
     margin-right: 15px;
 }
