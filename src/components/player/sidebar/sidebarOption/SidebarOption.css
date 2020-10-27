@@ -1,5 +1,5 @@
 .sidebarOption {
-    color: grey;
+    color: rgb(184, 184, 184);
     height: 40px;
     cursor: pointer;
     transition: 150ms color ease-in;
@@ -8,9 +8,14 @@
     align-items: center;
 }
 
+.sidebarOption.small {
+    height: 30px;
+}
+
 .sidebarOption > p {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
+    margin: 0;
 }
 .sidebarOption__icon {
     margin-right: 15px;
