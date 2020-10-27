@@ -3,8 +3,19 @@
     height: 40px;
     cursor: pointer;
     transition: 150ms color ease-in;
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.sidebarOption__icon {
+    margin-right: 15px;
 }
 
 .sidebarOption:hover {
+    color: white;
+}
+
+.selected > .sidebarOption {
     color: white;
 }

@@ -3,12 +3,34 @@
     min-width: 230px;
     color: white;
     background-color: #040404;
+    padding: 0 8px;
+}
+
+.sidebar > hr {
+    border: 1px solid #282828;
+    width: 90%;
+    margin: 10px auto;
 }
 
 .sidebar__logo {
     height: 40px;
     padding-top: 24px;
     padding-left: 24px;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
     margin-right: auto;
+}
+
+.sidebar__optionList {
+    align-items: center;
+}
+
+.sidebar__optionList.selected {
+    border-radius: 5px;
+    background-color: rgb(43, 43, 43);
+}
+
+.sidebar__title {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 12px;
 }
