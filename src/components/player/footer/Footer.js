@@ -5,24 +5,58 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 import RepeatIcon from '@material-ui/icons/Repeat';
+import { Grid, Slider } from '@material-ui/core';
+import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
+import DevicesIcon from '@material-ui/icons/Devices';
+import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import { ReactComponent as PictureInPicture } from '../../../images/picture-in-picture.svg'
+import { useSelector } from 'react-redux';
+import { selectPlaylists } from '../../../features/userSlice';
+
 
 function Footer() {
+    const playlists = useSelector(selectPlaylists);
+
     return (
         <div className="footer">
             <div className="footer__left">
-                <p>Album and song details</p>
+                <img
+                    className="footer__albumLogo"
+                    src={playlists?.playlists?.items[1]?.images[0]?.url}
+                    alt=""
+                />
+                <div className="footer__songInfo">
+                    <h4>Yeah!</h4>
+                    <p>User</p>
+                </div>
+                <FavoriteBorderIcon fontSize="small" style={{ marginRight: "15px" }} className="footer__icon" />
+                <PictureInPicture className="footer__icon" />
             </div>
             <div className="footer__center">
                 <div className="footer__centerTop">
-                    <ShuffleIcon className="footer__green" />
+                    <ShuffleIcon className="footer__icon" />
                     <SkipPreviousIcon className="footer__icon" />
-                    <PlayCircleOutlineIcon fontSize="large" className="footer__icon" />
+                    <PlayCircleOutlineIcon fontSize="large" className="footer__playerIcon" />
                     <SkipNextIcon className="footer__icon" />
-                    <RepeatIcon className="footer__green" />
+                    <RepeatIcon className="footer__icon" />
                 </div>
             </div>
             <div className="footer__right">
-                <p>Volume controls</p>
+                <Grid container spacing={2}>
+                    <Grid item>
+                        <PlaylistPlayIcon className="footer__icon" />
+                    </Grid>
+                    <Grid item>
+                        <DevicesIcon fontSize="small" className="footer__icon" />
+                    </Grid>
+                    <Grid item>
+                        <VolumeUpIcon />
+                    </Grid>
+                    <Grid item>
+                        <Slider />
+                    </Grid>
+                </Grid>
             </div>
         </div>
     )

@@ -9,15 +9,38 @@
     background-color: #282828;
 }
 
+.footer__icon:hover,
+.footer__playerIcon:hover {
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.footer__playerIcon:hover {
+    transform: scale(1.05);
+}
 .footer__left {
-    flex: 0.3;
+    flex: 0.33;
     display: flex;
-    justify-content: center;
     align-items: center;
+    color:  rgb(184, 184, 184);
+    min-width: 230px;
+}
+
+.footer__albumLogo {
+    margin: 0 15px;
+    height: 55px;
+    width: 55px;
+    object-fit: contain;
+}
+
+.footer__songInfo {
+    flex: 1;
 }
 
 .footer__center {
     flex: 0.4;
+    min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,15 +49,30 @@
 .footer__centerTop {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 200px;
-    color: white;
+    color:  rgb(184, 184, 184);
+}
+
+.footer__centerTop > .MuiSvgIcon-root {
+    margin-right: 30px;
 }
 
 .footer__right {
-    flex: 0.3;
+    min-width: 220px;
+    flex: 0.33;
     display: flex;
-    justify-content: center;
+    color:  rgb(184, 184, 184);
+    margin-right: 15px;
+}
+
+.footer__right > .MuiGrid-root {
+    justify-content: flex-end;
     align-items: center;
+}
+
+.footer__right * .MuiSlider-root {
+    color: green;
+    width: 100px;
 }
