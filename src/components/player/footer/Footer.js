@@ -12,24 +12,42 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { ReactComponent as PictureInPicture } from '../../../images/picture-in-picture.svg'
 import { useSelector } from 'react-redux';
-import { selectPlaylists } from '../../../features/userSlice';
+import { selectCurrentPlaylist, selectPlaylists } from '../../../features/userSlice';
 
 
 function Footer() {
     const playlists = useSelector(selectPlaylists);
+    const currentPlaylist = useSelector(selectCurrentPlaylist);
 
     return (
         <div className="footer">
             <div className="footer__left">
-                <img
-                    className="footer__albumLogo"
-                    src={playlists?.playlists?.items[1]?.images[0]?.url}
-                    alt=""
-                />
-                <div className="footer__songInfo">
-                    <h4>Yeah!</h4>
-                    <p>User</p>
-                </div>
+                {currentPlaylist ? (
+                    <>
+                        <img
+                            className="footer__albumLogo"
+                            src={currentPlaylist?.playlist?.images[0]?.url}
+                            alt=""
+                        />
+                        <div className="footer__songInfo">
+                            <h4>Yeah!</h4>
+                            <p>User</p>
+                        </div>
+                    </>
+                ) : (
+                        <>
+                            <img
+                                className="footer__albumLogo"
+                                src={playlists?.playlists?.items[1]?.images[0]?.url}
+                                alt=""
+                            />
+                            <div className="footer__songInfo">
+                                <h4>Yeah!</h4>
+                                <p>User</p>
+                            </div>
+                        </>
+                    )}
+
                 <FavoriteBorderIcon fontSize="small" style={{ marginRight: "15px" }} className="footer__icon" />
                 <PictureInPicture className="footer__icon" />
             </div>

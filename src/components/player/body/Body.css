@@ -1,4 +1,6 @@
 .body {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 1));
     height: calc(100vh-90px);
@@ -11,6 +13,7 @@
     display: flex;
     align-items: center;
     padding: 0 30px;
+    margin-bottom: 25px;
 }
 
 .body__info > img {
@@ -32,4 +35,51 @@
 
 .body__infoText > p {
     font-size: 14px;
+    font-weight: 700;
+}
+
+#body__songCount {
+    color: rgb(184, 184, 184);
+}
+
+
+/* Below side of Player body */
+.body__songs {
+    color:rgb(184, 184, 184);
+    flex: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.212), rgba(0, 0, 0, 0.247));
+}
+
+.body__songs .MuiSvgIcon-root:hover {
+    color: white;
+}
+
+.body__icons {
+    display: flex;
+    align-items: center;
+    padding: 24px 32px;
+}
+
+/* Play button attributes */
+.body__playButton {
+    color: white;
+    height: 55px;
+    width: 55px;
+    background-color: #1db954;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.body__playButton:hover {
+    transform: scale(1.05);
+}
+
+.body__playButton > svg {
+    margin-left: 13px;
+    margin-top: 13px;
+}
+
+/* Song list */
+.body__contents {
+    padding: 0 32px;
 }
