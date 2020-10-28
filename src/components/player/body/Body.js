@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectCurrentPlaylist, selectPlaylists } from '../../../features/userSlice';
 import './Body.css'
@@ -11,9 +11,22 @@ function Body({ spotify }) {
     const playlist = useSelector(selectPlaylists);
     const currentPlaylist = useSelector(selectCurrentPlaylist);
 
+    const [show, setShow] = useState(false)
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                setShow(true);
+            } else setShow(false);
+        });
+        return (() => {
+            window.removeEventListener('scroll')
+        });
+    }, []);
+
     return (
         <div className="body">
-            <div className="body__container">
+            <div className={`body__container ${show && 'black'}`}>
                 <Header spotify={spotify} />
             </div>
 

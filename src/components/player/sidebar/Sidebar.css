@@ -4,6 +4,7 @@
     color: white;
     background-color: #040404;
     padding: 0 8px;
+    position: fixed;
 }
 
 .sidebar > hr {
