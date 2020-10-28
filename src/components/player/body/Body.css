@@ -5,5 +5,31 @@
     color: white;
 }
 
-.body__container {
+
+.body__info {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.body__info > img {
+    height: 192px;
+    width: 192px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.body__infoText {
+    margin-left: 30px;
+    margin-top: 15px;
+    flex: 1;
+}
+
+.body__infoText > h2 {
+    font-size: 90px;
+    margin-bottom: 10px;
+}
+
+.body__infoText > p {
+    font-size: 14px;
 }

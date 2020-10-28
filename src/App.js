@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Login from './components/login/Login';
 import { getTokenFromUrl } from './spotify';
@@ -37,12 +37,14 @@ function App() {
         dispatch(SET_PLAYLISTS({
           playlists
         }))
-      })
+      });
+
+      spotify.getPlaylist('')
     }
   }, [window.location.hash])
 
-  console.log("USER: ", user);
-  console.log("TOKEN: ", token)
+  // console.log("USER: ", user);
+  // console.log("TOKEN: ", token)
 
   return (
     <div className="app">

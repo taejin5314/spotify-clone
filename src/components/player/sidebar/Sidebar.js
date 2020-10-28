@@ -8,8 +8,9 @@ import { ReactComponent as Library } from '../../../images/library.svg'
 import { useSelector } from 'react-redux';
 import { selectPlaylists } from '../../../features/userSlice';
 
-function Sidebar() {
+function Sidebar({ spotify }) {
     const playlists = useSelector(selectPlaylists);
+
 
     return (
         <div className="sidebar">
@@ -30,7 +31,7 @@ function Sidebar() {
             <hr />
 
             {playlists?.playlists?.items?.map(playlist => (
-                <SidebarOption title={playlist.name} />
+                <SidebarOption key={playlist?.id} title={playlist?.name} playlistId={playlist?.id} spotify={spotify} />
             ))}
 
         </div>
