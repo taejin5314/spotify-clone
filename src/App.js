@@ -6,6 +6,10 @@ import SpotifyWebApi from 'spotify-web-api-js';
 import Player from './components/player/Player';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser, selectToken, SET_TOKEN, SET_USER, SET_PLAYLISTS } from './features/userSlice';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/home/Home';
+import Search from './components/search/Search';
+import Library from './components/library/Library'
 
 const spotify = new SpotifyWebApi();
 
@@ -48,9 +52,32 @@ function App() {
 
   return (
     <div className="app">
+
       {
         token ? (
-          <Player spotify={spotify} />
+          <Router>
+            <Switch>
+              <Route path="/playlist/:id">
+                <Player spotify={spotify} />
+              </Route>
+
+              <Route path="/library">
+                <Library spotify={spotify} />
+              </Route>
+
+              <Route path="/search">
+                <Search spotify={spotify} />
+              </Route>
+
+              <Route path="/home">
+                <Home spotify={spotify} />
+              </Route>
+
+              <Route exact path='/'>
+                <Player spotify={spotify} />
+              </Route>
+            </Switch>
+          </Router>
         ) : (
             <Login />
           )

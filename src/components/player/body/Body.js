@@ -5,6 +5,7 @@ import './Body.css'
 import Header from './header/Header';
 import { ReactComponent as PlayButton } from '../../../images/play_button.svg'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import SongRow from './songRow/SongRow';
 
 function Body({ spotify }) {
     const playlist = useSelector(selectPlaylists);
@@ -44,6 +45,21 @@ function Body({ spotify }) {
                         <PlayButton />
                     </div>
                     <MoreHorizIcon fontSize="large" />
+                </div>
+
+                <div className="body__contents">
+                    {currentPlaylist ? (
+                        <>
+                            {currentPlaylist?.playlist?.tracks?.items?.map((item) => (
+                                <SongRow track={item.track} />
+                            ))}
+                        </>
+                    ) : (
+                            <>
+
+                            </>
+                        )}
+
                 </div>
             </div>
         </div>
