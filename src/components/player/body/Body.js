@@ -1,12 +1,12 @@
 import React from 'react';
 import './Body.css'
+import Header from './header/Header';
 
-function Body() {
+function Body({ spotify }) {
     return (
         <div className="body">
             <div className="body__container">
-
-                <h1>I am the body</h1>
+                <Header />
             </div>
         </div>
     )
