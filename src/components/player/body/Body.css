@@ -60,6 +60,11 @@
     background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 1));
 }
 
+.body__favIcon {
+    color: #1db954;
+    margin-right:25px;
+}
+
 .body__songs .MuiSvgIcon-root:hover {
     color: white;
 }
@@ -89,7 +94,31 @@
     margin-top: 13px;
 }
 
+
 /* Song list */
 .body__contents {
     padding: 0 32px;
+}
+
+/* Separator */
+.body__separator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    border-bottom: 1px solid rgba(102, 102, 102, 0.247);
+}
+
+.body__nameIndex {
+    min-width: 250px;
+}
+
+.body__albumIndex {
+    min-width: 140px;
+}
+
+@media (max-width: 990px) {
+    .body__addedIndex {
+        display: none;
+    }
 }

@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import { selectCurrentPlaylist, selectPlaylists } from '../../../features/userSlice';
 import './Body.css'
 import Header from './header/Header';
-import { ReactComponent as PlayButton } from '../../../images/play_button.svg'
+import { ReactComponent as PlayButton } from '../../../images/play_button.svg';
+import { ReactComponent as Clock } from '../../../images/clock.svg';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import SongRow from './songRow/SongRow';
 
@@ -47,14 +49,21 @@ function Body({ spotify }) {
                     <div className="body__playButton">
                         <PlayButton />
                     </div>
-                    <MoreHorizIcon fontSize="large" />
+                    <FavoriteIcon className="body__favIcon" fontSize="large" />
+                    <MoreHorizIcon className="body__moreIcon" fontSize="large" />
                 </div>
 
                 <div className="body__contents">
+                    <div className="body__separator">
+                        <p className="body__nameIndex"># &ensp;  Name</p>
+                        <p className="body__albumIndex">Album</p>
+                        <p className="body__addedIndex">Added</p>
+                        <Clock style={{ marginRight: "30px" }} />
+                    </div>
                     {currentPlaylist ? (
                         <>
-                            {currentPlaylist?.playlist?.tracks?.items?.map((item) => (
-                                <SongRow track={item.track} />
+                            {currentPlaylist?.playlist?.tracks?.items?.map((item, index) => (
+                                <SongRow track={item.track} index={index} />
                             ))}
                         </>
                     ) : (
