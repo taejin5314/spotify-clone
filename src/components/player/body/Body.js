@@ -15,10 +15,10 @@ function Body({ spotify }) {
     return (
         <div className="body">
 
+            <div className="body__container">
+                <Header spotify={spotify} />
+            </div>
             <div className="body__helper">
-                <div className="body__container">
-                    <Header spotify={spotify} />
-                </div>
 
                 <div className="body__info">
                     {currentPlaylist ? (
