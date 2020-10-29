@@ -119,11 +119,15 @@
 }
 
 .body__addedIndex {
-    margin-right: 70px;
+    margin-right: 80px;
 }
 
 @media (max-width: 990px) {
     .body__addedIndex {
         display: none;
+    }
+
+    .body__albumIndex {
+        margin-right: 40px;
     }
 }

@@ -6,19 +6,17 @@
     color: white;
 }
 
-.songRow > .MuiSvgIcon-root {
-    position: absolute;
-    right: 40px;
-    display: none;
+.songRow__favoriteIcon {
+    right: 120px;
 }
-
-.songRow:hover > .MuiSvgIcon-root {
-    display: grid;
+.songRow__moreIcon {
+    right: 40px;
 }
 
 .songRow__title {
     display: flex;
     min-width: 250px;
+    align-items: center;
 }
 
 .songRow__index {
@@ -60,8 +58,30 @@
     min-width: 140px;
 }
 
-.songRow__songDuration {
-    margin-right: 25px;
+.songRow__right {
+    display: flex;
+    position: relative;
+    margin-left: 30px;
+    min-width: 60px;
+}
+
+.songRow__favoriteIcon {
+    position: absolute;
+    display: none !important;
+    left: -35px;
+}
+
+.songRow__moreIcon {
+    position: absolute;
+    display: none !important;
+    right: -5px;
+}
+
+.songRow:hover .songRow__right {
+}
+.songRow:hover .songRow__favoriteIcon,
+.songRow:hover .songRow__moreIcon {
+    display: grid !important;
 }
 
 @media (max-width: 990px) {
