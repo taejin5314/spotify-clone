@@ -13,30 +13,33 @@ function Body({ spotify }) {
 
     return (
         <div className="body">
-            <div className="body__container">
-                <Header spotify={spotify} />
-            </div>
 
-            <div className="body__info">
-                {currentPlaylist ? (
-                    <>
-                        <img src={currentPlaylist?.playlist?.images[0]?.url} alt="playlist_image" />
-                        <div className="body__infoText">
-                            <h3>PLAYLIST</h3>
-                            <h2>{currentPlaylist?.playlist?.name}</h2>
-                            <p>{currentPlaylist?.playlist?.owner?.display_name} · <span id="body__songCount">{currentPlaylist?.playlist?.tracks?.total} Songs</span></p>
-                        </div>
-                    </>
-                ) : (
+            <div className="body__helper">
+                <div className="body__container">
+                    <Header spotify={spotify} />
+                </div>
+
+                <div className="body__info">
+                    {currentPlaylist ? (
                         <>
-                            <img src={playlist?.playlists?.items[0]?.images[0]?.url} alt="playlist_image" />
+                            <img src={currentPlaylist?.playlist?.images[0]?.url} alt="playlist_image" />
                             <div className="body__infoText">
                                 <h3>PLAYLIST</h3>
-                                <h2>{playlist?.playlists?.items[0]?.name}</h2>
-                                <p>{playlist?.playlists?.items[0]?.owner?.display_name} · <span id="body__songCount">{playlist?.playlists?.items[0]?.tracks?.total} Songs</span></p>
+                                <h2>{currentPlaylist?.playlist?.name}</h2>
+                                <p>{currentPlaylist?.playlist?.owner?.display_name} · <span id="body__songCount">{currentPlaylist?.playlist?.tracks?.total} Songs</span></p>
                             </div>
                         </>
-                    )}
+                    ) : (
+                            <>
+                                <img src={playlist?.playlists?.items[0]?.images[0]?.url} alt="playlist_image" />
+                                <div className="body__infoText">
+                                    <h3>PLAYLIST</h3>
+                                    <h2>{playlist?.playlists?.items[0]?.name}</h2>
+                                    <p>{playlist?.playlists?.items[0]?.owner?.display_name} · <span id="body__songCount">{playlist?.playlists?.items[0]?.tracks?.total} Songs</span></p>
+                                </div>
+                            </>
+                        )}
+                </div>
             </div>
 
             <div className="body__songs">

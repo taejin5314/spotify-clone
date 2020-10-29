@@ -3,7 +3,6 @@
     flex-direction: column;
     margin-left: 246px;
     flex: 1;
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 1));
     color: white;
     min-height: 100vh;
     padding-bottom: 89px;
@@ -14,12 +13,17 @@
     top: 0;
 }
 
+.body__helper {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85));
+}
+
 .body__info {
     margin-top: 70px;
     display: flex;
     align-items: center;
     padding: 0 30px;
     margin-bottom: 25px;
+    
 }
 
 .body__info > img {
@@ -53,7 +57,7 @@
 .body__songs {
     color:rgb(184, 184, 184);
     flex: 1;
-    background: linear-gradient(rgba(0, 0, 0, 0.212), rgba(0, 0, 0, 0.247));
+    background: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 1));
 }
 
 .body__songs .MuiSvgIcon-root:hover {
