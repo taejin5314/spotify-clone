@@ -12,7 +12,6 @@ import SongRow from './songRow/SongRow';
 function Body({ spotify }) {
     const playlist = useSelector(selectPlaylists);
     const currentPlaylist = useSelector(selectCurrentPlaylist);
-
     return (
         <div className="body">
 
@@ -27,7 +26,12 @@ function Body({ spotify }) {
                             <img src={currentPlaylist?.playlist?.images[0]?.url} alt="playlist_image" />
                             <div className="body__infoText">
                                 <h3>PLAYLIST</h3>
-                                <h2>{currentPlaylist?.playlist?.name}</h2>
+                                <h2>
+                                    {((currentPlaylist?.playlist?.name).length > 15) ?
+                                        (((currentPlaylist?.playlist?.name).substring(0, 15 - 3)) + '...') :
+                                        currentPlaylist?.playlist?.name}
+                                    {}
+                                </h2>
                                 <p>{currentPlaylist?.playlist?.owner?.display_name} · <span id="body__songCount">{currentPlaylist?.playlist?.tracks?.total} Songs</span></p>
                             </div>
                         </>
@@ -63,7 +67,7 @@ function Body({ spotify }) {
                     {currentPlaylist ? (
                         <>
                             {currentPlaylist?.playlist?.tracks?.items?.map((item, index) => (
-                                <SongRow track={item.track} index={index} />
+                                <SongRow track={item.track} added_at={item.added_at} index={index} />
                             ))}
                         </>
                     ) : (
