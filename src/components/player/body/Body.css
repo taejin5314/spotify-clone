@@ -12,11 +12,6 @@
 .body__container {
     position: sticky;
     top: 0;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.body__container.black {
-    background-color: black;
 }
 
 .body__info {

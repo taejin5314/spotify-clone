@@ -2,6 +2,11 @@
     display: flex;
     padding: 10px 30px;
     justify-content: space-between;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.header.black {
+    background-color: black;
 }
 
 .header__left {
