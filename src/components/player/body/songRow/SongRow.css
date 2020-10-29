@@ -1,9 +1,19 @@
 .songRow {
-    padding: 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: white;
+}
+
+.songRow > .MuiSvgIcon-root {
+    position: absolute;
+    right: 40px;
+    display: none;
+}
+
+.songRow:hover > .MuiSvgIcon-root {
+    display: grid;
 }
 
 .songRow__title {
@@ -15,10 +25,21 @@
     margin-right: 20px;
 }
 
+.songRow__songArtist,
+.songRow__songAlbum,
+.songRow__songAdded,
+.songRow__songDuration {
+    color: gray;
+}
+
 .songRow:hover {
     cursor: pointer;
-    background-color: black;
-    opacity: 0.8;
+    background-color: rgba(114, 114, 114, 0.178);
+    border-radius: 5px;
+}
+
+.songRow:hover p {
+    color: white;
 }
 
 .songRow__album {
@@ -33,7 +54,6 @@
 .songRow__songArtist {
     font-size: 12px;
     margin-top: 3px;
-    color: gray;
 }
 
 .songRow__songAlbum {

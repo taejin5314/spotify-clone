@@ -32,6 +32,8 @@ function SongRow({ track, index, added_at }) {
             <p className="songRow__songAdded">{moment(added_at).fromNow()}</p>
 
             <p className="songRow__songDuration">{moment.duration(track.duration_ms).minutes()}:{(moment.duration(track.duration_ms).seconds() < 10) ? "0" + moment.duration(track.duration_ms).seconds() : moment.duration(track.duration_ms).seconds()}</p>
+
+            <MoreHorizIcon />
         </div>
     )
 }
