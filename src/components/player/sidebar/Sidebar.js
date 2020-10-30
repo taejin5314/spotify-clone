@@ -17,7 +17,7 @@ function Sidebar({ spotify }) {
         <div className="sidebar">
             <img className="sidebar__logo" src={logo} alt="Spotify Logo" onClick={() => history.push('/home')} />
             <ul className="sidebar__option">
-                <li className="sidebar__optionList" onClick={() => history.push('/home')}>
+                <li className="sidebar__optionList" onClick={() => history.push('/')}>
                     <SidebarOption Icon={Home} title="Home" />
                 </li>
                 <li className="sidebar__optionList" onClick={() => history.push('/search')}>

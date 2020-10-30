@@ -75,7 +75,7 @@ function Body({ spotify }) {
                     {currentPlaylist ? (
                         <>
                             {currentPlaylist?.playlist?.tracks?.items?.map((item, index) => (
-                                <SongRow track={item.track} added_at={item.added_at} index={index} />
+                                <SongRow key={item.track.id} track={item.track} added_at={item.added_at} index={index} />
                             ))}
                         </>
                     ) : (

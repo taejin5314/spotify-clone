@@ -14,6 +14,7 @@ import { ReactComponent as PictureInPicture } from '../../../images/picture-in-p
 import { useSelector } from 'react-redux';
 import { selectCurrentPlaylist, selectPlaylists } from '../../../features/userSlice';
 import { selectSong } from '../../../features/songSlice';
+import defaultSongImage from '../../../images/Spotify_Logo_RGB_White.png';
 
 
 function Footer() {
@@ -40,12 +41,12 @@ function Footer() {
                         <>
                             <img
                                 className="footer__albumLogo"
-                                src={playlists?.playlists?.items[1]?.images[0]?.url}
+                                src={defaultSongImage}
                                 alt=""
                             />
                             <div className="footer__songInfo">
-                                <h4>Yeah!</h4>
-                                <p>User</p>
+                                <h4>Spotify-clone</h4>
+                                <p>Select a playlist!</p>
                             </div>
                         </>
                     )}

@@ -69,12 +69,8 @@ function App() {
                 <Search spotify={spotify} />
               </Route>
 
-              <Route path="/home">
+              <Route exact path="/">
                 <Home spotify={spotify} />
-              </Route>
-
-              <Route exact path='/'>
-                <Player spotify={spotify} />
               </Route>
             </Switch>
           </Router>
