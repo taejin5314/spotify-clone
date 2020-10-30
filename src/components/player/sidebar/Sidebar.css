@@ -26,10 +26,10 @@
     align-items: center;
 }
 
-/* .sidebar__optionList.selected {
+.sidebar__optionList.selected {
     border-radius: 5px;
     background-color: rgb(43, 43, 43);
-} */
+}
 
 .sidebar__title {
     margin-left: 10px;
