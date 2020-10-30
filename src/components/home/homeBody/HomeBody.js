@@ -1,11 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectPlaylists, selectUser } from '../../../features/userSlice';
+import { selectPlaylists } from '../../../features/userSlice';
 import Header from '../../player/body/header/Header';
-import './HomeBody.css'
+import './HomeBody.css';
+import ReactHover, { Trigger, Hover } from 'react-hover';
 
 function HomeBody({ spotify }) {
     const playlists = useSelector(selectPlaylists);
+
+    const options = {
+        followCursor: true,
+        shiftX: 20,
+        shiftY: 0
+    }
 
     return (
         <div className="homeBody">
@@ -14,8 +21,20 @@ function HomeBody({ spotify }) {
             </div>
 
             <div className="homeBody__playlists">
-                {playlists.playlists.items.map((playlist) => (
-                    <img src={playlist.images[0].url} alt="" />
+                {playlists?.playlists.items.map((playlist) => (
+                    <div className="homebody__imageContainer">
+                        <ReactHover
+                            options={options}>
+                            <Trigger type='trigger'>
+                                <div>
+                                    <img className="homeBody__images" src={playlist.images[0].url} alt="" />
+                                </div>
+                            </Trigger>
+                            <Hover type='hover'>
+                                <h1>{playlist.name}</h1>
+                            </Hover>
+                        </ReactHover>
+                    </div>
                 ))}
             </div>
         </div>
