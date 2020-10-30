@@ -3,13 +3,29 @@ import './SongRow.css';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import moment from 'moment';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectSong, SET_SONG } from '../../../../features/songSlice';
 
 
 function SongRow({ track, index, added_at }) {
     const artist = track.artists.map((artist) => artist.name).join(', ');
+    const dispatch = useDispatch();
+
+    const playSelectedSong = (e) => {
+        e.preventDefault();
+        // console.log(track.name);
+        // console.log(artist);
+        // console.log(track.album.images[0].url);
+
+        dispatch(SET_SONG({
+            name: track.name,
+            artist: artist,
+            image: track.album.images[0].url,
+        }))
+    }
 
     return (
-        <div className="songRow">
+        <div className="songRow" onClick={playSelectedSong} >
             <div className="songRow__title">
                 <p className="songRow__index">{index + 1}</p>
                 <img className="songRow__album" src={track.album.images[0].url} alt="" />

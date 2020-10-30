@@ -13,25 +13,27 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { ReactComponent as PictureInPicture } from '../../../images/picture-in-picture.svg'
 import { useSelector } from 'react-redux';
 import { selectCurrentPlaylist, selectPlaylists } from '../../../features/userSlice';
+import { selectSong } from '../../../features/songSlice';
 
 
 function Footer() {
+    const selectedSong = useSelector(selectSong);
     const playlists = useSelector(selectPlaylists);
     const currentPlaylist = useSelector(selectCurrentPlaylist);
 
     return (
         <div className="footer">
             <div className="footer__left">
-                {currentPlaylist ? (
+                {selectedSong ? (
                     <>
                         <img
                             className="footer__albumLogo"
-                            src={currentPlaylist?.playlist?.images[0]?.url}
+                            src={selectedSong?.image}
                             alt=""
                         />
                         <div className="footer__songInfo">
-                            <h4>Yeah!</h4>
-                            <p>User</p>
+                            <h4>{selectedSong?.name}</h4>
+                            <p>{selectedSong?.artist}</p>
                         </div>
                     </>
                 ) : (

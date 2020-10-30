@@ -6,6 +6,7 @@
     color: white;
     min-height: 100vh;
     padding-bottom: 89px;
+    position: relative;
 }
 
 .body__container {
@@ -99,6 +100,7 @@
 /* Song list */
 .body__contents {
     padding: 0 32px;
+    margin-bottom: 100px;
 }
 
 /* Separator */
@@ -121,6 +123,23 @@
 
 .body__addedIndex {
     margin-right: 80px;
+}
+
+/* Refresh button */
+.body__refreshButton {
+    position: absolute;
+    bottom: 135px;
+    right: 40px;
+    padding: 8px 40px;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.body__refreshButton:hover {
+    transform: scale(1.1);
 }
 
 @media (max-width: 990px) {

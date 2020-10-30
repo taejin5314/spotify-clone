@@ -24,7 +24,8 @@
     display: flex;
     align-items: center;
     color:  rgb(184, 184, 184);
-    min-width: 230px;
+    min-width: 350px;
+    max-width: 350px;
 }
 
 .footer__albumLogo {
@@ -36,6 +37,16 @@
 
 .footer__songInfo {
     flex: 1;
+}
+
+.footer__songInfo > h4 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.footer__songInfo > p {
+    font-size: 12px;
 }
 
 .footer__center {

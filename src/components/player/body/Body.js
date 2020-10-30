@@ -8,10 +8,18 @@ import { ReactComponent as Clock } from '../../../images/clock.svg';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import SongRow from './songRow/SongRow';
+import { useHistory, useParams } from 'react-router-dom';
+import { IconButton } from '@material-ui/core';
 
 function Body({ spotify }) {
     const playlist = useSelector(selectPlaylists);
     const currentPlaylist = useSelector(selectCurrentPlaylist);
+    const param = useParams();
+    const history = useHistory();
+
+    const refreshPage = () => {
+        history.push(`/playlist/${param}`);
+    }
     return (
         <div className="body">
 
@@ -78,6 +86,8 @@ function Body({ spotify }) {
 
                 </div>
             </div>
+
+            <button onClick={refreshPage} className="body__refreshButton">Refresh</button>
         </div>
     )
 }
