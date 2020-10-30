@@ -16,11 +16,13 @@ function SongRow({ track, index, added_at }) {
         // console.log(track.name);
         // console.log(artist);
         // console.log(track.album.images[0].url);
+        // console.log(track.preview_url)
 
         dispatch(SET_SONG({
             name: track.name,
             artist: artist,
             image: track.album.images[0].url,
+            preview_url: track.preview_url,
         }))
     }
 

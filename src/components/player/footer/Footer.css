@@ -51,19 +51,10 @@
 
 .footer__center {
     flex: 0.4;
-    min-width: 300px;
+    min-width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.footer__centerTop {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 200px;
-    color:  rgb(184, 184, 184);
 }
 
 .footer__centerTop > .MuiSvgIcon-root {
@@ -71,7 +62,7 @@
 }
 
 .footer__right {
-    min-width: 220px;
+    min-width: 240px;
     flex: 0.33;
     display: flex;
     color:  rgb(184, 184, 184);
@@ -86,4 +77,17 @@
 .footer__right * .MuiSlider-root {
     color: green;
     width: 100px;
+}
+
+.footer__copyright {
+    text-align: center;
+}
+
+.footer__copyright > h4 {
+    color: white;
+    font-size: 14px;
+}
+
+.footer__copyright > p {
+    font-size: 12px;
 }

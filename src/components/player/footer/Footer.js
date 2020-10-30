@@ -12,15 +12,13 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { ReactComponent as PictureInPicture } from '../../../images/picture-in-picture.svg'
 import { useSelector } from 'react-redux';
-import { selectCurrentPlaylist, selectPlaylists } from '../../../features/userSlice';
 import { selectSong } from '../../../features/songSlice';
 import defaultSongImage from '../../../images/Spotify_Logo_RGB_White.png';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 function Footer() {
     const selectedSong = useSelector(selectSong);
-    const playlists = useSelector(selectPlaylists);
-    const currentPlaylist = useSelector(selectCurrentPlaylist);
 
     return (
         <div className="footer">
@@ -55,13 +53,11 @@ function Footer() {
                 <PictureInPicture className="footer__icon" />
             </div>
             <div className="footer__center">
-                <div className="footer__centerTop">
-                    <ShuffleIcon className="footer__icon" />
-                    <SkipPreviousIcon className="footer__icon" />
-                    <PlayCircleOutlineIcon fontSize="large" className="footer__playerIcon" />
-                    <SkipNextIcon className="footer__icon" />
-                    <RepeatIcon className="footer__icon" />
-                </div>
+                <ReactAudioPlayer
+                    style={{ marginLeft: "50px", outline: 'none' }}
+                    src={selectedSong?.preview_url}
+                    controls
+                />
             </div>
             <div className="footer__right">
                 <Grid container spacing={2}>
@@ -72,10 +68,10 @@ function Footer() {
                         <DevicesIcon fontSize="small" className="footer__icon" />
                     </Grid>
                     <Grid item>
-                        <VolumeUpIcon />
-                    </Grid>
-                    <Grid item>
-                        <Slider />
+                        <div className="footer__copyright">
+                            <h4>NO COPYRIGHT</h4>
+                            <p>Taejin Jung's Spotify clone</p>
+                        </div>
                     </Grid>
                 </Grid>
             </div>

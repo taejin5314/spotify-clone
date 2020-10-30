@@ -3,6 +3,7 @@
     padding: 10px 30px;
     justify-content: space-between;
     transition: background-color 0.2s ease-in-out;
+    z-index: 99;
 }
 
 .header.black {

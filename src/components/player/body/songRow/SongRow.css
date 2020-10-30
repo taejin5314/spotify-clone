@@ -77,11 +77,9 @@
     right: -5px;
 }
 
-.songRow:hover .songRow__right {
-}
 .songRow:hover .songRow__favoriteIcon,
 .songRow:hover .songRow__moreIcon {
-    display: grid !important;
+    display: block !important;
 }
 
 @media (max-width: 990px) {
