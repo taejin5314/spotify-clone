@@ -1,0 +1,21 @@
+.homeBody {
+    display: flex;
+    flex-direction: column;
+    margin-left: 246px;
+    flex: 1;
+    color: white;
+    /* padding-bottom: 89px; */
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.904));
+}
+
+.homeBody__playlists {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.homeBody__playlists > img {
+    height: 320px;
+    margin: 25px;
+    border-radius: 10px;
+}
