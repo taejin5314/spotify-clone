@@ -1,0 +1,12 @@
+.searchBody {
+    display: flex;
+    flex-direction: column;
+    margin-left: 246px;
+    flex: 1;
+    color: white;
+    /* padding-bottom: 89px; */
+    min-height: 100vh;
+    margin-bottom: 89px;
+    padding-bottom: 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.904));
+}

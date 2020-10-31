@@ -1,0 +1,78 @@
+.searchHeader {
+    display: flex;
+    padding: 10px 30px;
+    justify-content: space-between;
+    transition: background-color 0.2s ease-in-out;
+    z-index: 99;
+    align-items: center;
+}
+
+.searchHeader.black {
+    background-color: black;
+}
+
+.searchHeader__left {
+    display: flex;
+    margin-right: 100px;
+}
+
+.searchHeader__iconButton {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: rgba(26, 26, 26, 0.801);
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.searchHeader__iconButton > .MuiSvgIcon-root { 
+    margin-left: 8px;
+    margin-top: 7px;
+}
+
+.searchHeader__input {
+    min-width: 350px;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 7px 5px;
+    border-radius: 50px;
+}
+
+.searchHeader__input > svg {
+    cursor: pointer;
+}
+
+.searchHeader__input > input {
+    min-width: 300px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.searchHeader__right {
+    display: flex;
+    align-items: center;
+}
+
+.searchHeader__right > button {
+    background-color: black;
+    color: white;
+    padding: 8px 34px;
+    border-radius: 500px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.685);
+    margin-right: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.searchHeader__right > button:hover {
+    transform: scale(1.05);
+}
