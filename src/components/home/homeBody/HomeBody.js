@@ -10,8 +10,8 @@ function HomeBody({ spotify }) {
 
     const options = {
         followCursor: true,
-        shiftX: 20,
-        shiftY: 0
+        shiftX: -20,
+        shiftY: 30
     }
 
     return (
@@ -31,7 +31,10 @@ function HomeBody({ spotify }) {
                                 </div>
                             </Trigger>
                             <Hover type='hover'>
-                                <h1>{playlist.name}</h1>
+                                <div className="homeBody__speechBubble">
+                                    <p>Playlist:</p>
+                                    <h1>{playlist.name}</h1>
+                                </div>
                             </Hover>
                         </ReactHover>
                     </div>
