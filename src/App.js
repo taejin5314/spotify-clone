@@ -9,7 +9,6 @@ import { selectUser, selectToken, SET_TOKEN, SET_USER, SET_PLAYLISTS } from './f
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import Search from './components/search/Search';
-import Library from './components/library/Library'
 
 const spotify = new SpotifyWebApi();
 
@@ -62,7 +61,7 @@ function App() {
               </Route>
 
               <Route path="/library">
-                <Library spotify={spotify} />
+                <Home spotify={spotify} />
               </Route>
 
               <Route path="/search">
