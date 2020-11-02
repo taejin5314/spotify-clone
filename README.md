@@ -28,7 +28,7 @@ If the user click the playlist in the sidebar, the website will be redirected to
 
 # 4. Playing Music
 
-In the playlist page, if the user click the song, the audio player will receive the information of the music(preview version), and the user can listen the song by clicking the play button in the player.
+In the playlist page, if the user click the song, the audio player will receive the information of the music(preview version), and the user can listen to the song by clicking the play button in the player.
 
 ![player](https://user-images.githubusercontent.com/21342802/97828057-fddfb980-1c93-11eb-93e8-1664464cd1eb.png)
 
