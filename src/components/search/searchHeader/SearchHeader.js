@@ -9,6 +9,13 @@ import { ReactComponent as Search } from '../../../images/search_narrow.svg'
 function SearchHeader({ spotify }) {
     const user = useSelector(selectUser);
     const [show, setShow] = useState(false)
+    const [inputValue, setInputValue] = useState('')
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+
+        setInputValue('');
+    }
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -29,10 +36,10 @@ function SearchHeader({ spotify }) {
                     <ArrowForwardIosIcon fontSize="small" />
                 </div>
 
-                <div className="searchHeader__input">
+                <form onSubmit={(e) => onSubmitHandler(e)} className="searchHeader__input">
                     <Search />
-                    <input placeholder="Search" type="text" />
-                </div>
+                    <input onChange={(e) => setInputValue(e.target.value)} value={inputValue} placeholder="Search" type="text" />
+                </form>
             </div>
 
 
