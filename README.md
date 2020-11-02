@@ -40,7 +40,7 @@ When I created the project, I used the command `npx create-react-app my-app --te
 
 I used spotfiy API to get information of musics from the actual spotify account. <br />
 
-`spotify.setAccessToken(_token)`: This function helps me to get a token when I logged in with my spotify account. <br />
+`spotify.setAccessToken()`: This function helps me to get a token when I logged in with my spotify account. <br />
 `spotify.getMe()`: This function is for getting user information. <br />
 `spotify.getUserPlaylists()`: By using this function, I could get playlists of my account. <br />
 
