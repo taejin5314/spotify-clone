@@ -56,6 +56,6 @@ By using firebase, I could deploy the application very easily. <br />
 
 ## Project link
 
-Below link is the address of my project which is deployed. Make sure that you have an actual spotify account and playlists in your account.
+Below link is the address of my project which is deployed. Make sure that you have an actual spotify account and playlists in it.
 
 https://spotify-clone-8b69b.web.app/
