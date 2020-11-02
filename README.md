@@ -52,7 +52,7 @@ By using firebase, I could deploy the application very easily. <br />
 
 `firebase init`: Initiate the deployment. User can choose the options and directory. <br />
 `npm run build`: Build the project. <br />
-`firebase deploy`: Deployment. User can get a hosting url and project console url. <br />
+`firebase deploy`: Starting deployment. User can get a hosting url and project console url. <br />
 
 ## Project link
 
