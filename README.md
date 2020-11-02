@@ -44,6 +44,8 @@ I used spotfiy API to get information of musics from the actual spotify account.
 `spotify.getMe()`: This function is for getting user information. <br />
 `spotify.getUserPlaylists()`: By using this function, I could get playlists of my account. <br />
 
+For more information, visit https://developer.spotify.com/
+
 # 7. Firebase deploy
 
 By using firebase, I could deploy the application very easily. <br />
